@@ -1,7 +1,12 @@
 <?php
 
+// Écrivez une fonction « my_get_args » qui prend en paramètre un nombre variable d'arguments
+// et renvoie ces arguments dans un tableau.
 function my_get_args() {
-    return array_slice(debug_backtrace()[0]['args'], 0);
+
+    // Utilisons debug_backtrace pour obtenir les arguments de la fonction 
+    
+    return debug_backtrace()[1]['args'];
 }
 
 ?>
