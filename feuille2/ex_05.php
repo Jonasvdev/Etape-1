@@ -5,9 +5,11 @@
 
 function my_add_elem_map(mixed $key, mixed $value, mixed &$map){
 
-    if (!is_array($map)) {
+    if (!is_array($map) || is_null($key) || array_key_exists($key, $map)) {
+
         echo "Vous devez fournir des paramètres corrects.\n";
-        return NULL;
+        return is_array($map) ? 
+        $map : [] ;
     }
 
     $map[$key] = $value;
@@ -39,7 +41,8 @@ function my_delete_elem_map(mixed $key, mixed &$map) {
 
     if (!is_array($map) || is_null($key) || !array_key_exists($key, $map)) {
         echo "Vous devez fournir des paramètres corrects.\n";
-        return is_array($map) ? $map : [];
+        return is_array($map) ? 
+        $map : [];
     }
 
     unset($map[$key]);
