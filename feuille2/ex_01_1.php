@@ -1,6 +1,7 @@
 <?php
 
 // une fonction « my_included_putstr » qui affichera la chaîne de caractères fournie en paramètre.
+
 function my_included_putstr(string $str) : void {
     echo $str . "\n";
 }
