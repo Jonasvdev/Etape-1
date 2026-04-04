@@ -16,7 +16,7 @@ function my_add_elem_map(mixed $key, mixed $value, mixed &$map){
     return $map;
 }
 
-// odifie la valeur d'une clé existante dans la map.
+// modifie la valeur d'une clé existante dans la map.
  // Si la clé n'existe pas, affiche un message d'erreur.
 
 
