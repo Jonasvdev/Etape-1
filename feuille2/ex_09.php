@@ -7,10 +7,21 @@ function check_array_sum(array $numbers) : bool {
 
     $numbers = []; // Initialiser un tableau pour les nombres entiers
 
+    // verifier que le tableau ne contient pas de valeurs negatives
+
+    foreach ($numbers as $number) {
+
+        if (!is_numeric($number) || $number < 0) {
+
+            echo "Le tableau doit contenir uniquement des nombres entiers positifs."; PHP_EOL;
+            return false; // Si une valeur n'est pas un nombre ou est négative, on retourne faux
+        }
+    }
+
+$numbers = array_filter($numbers, 'is_numeric'); // Filtrer les éléments non numériques 
 
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Exemple de tableau de nombres 
 
-$numbers = array_filter($numbers, 'is_numeric'); // Filtrer les éléments non numériques 
 
     if (empty($numbers)) {
 
