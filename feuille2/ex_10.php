@@ -23,6 +23,7 @@ function simplify_polynomial_expression(string $expression) : string {
                 $simplifiedTerms[$exponent] += $coefficient; // Additionner les coefficients des termes similaires
 
             } else {
+                
                 $simplifiedTerms[$exponent] = $coefficient;
             }
         } elseif (preg_match('/^(\d*)x$/', $term, $matches)) {
@@ -48,7 +49,7 @@ function simplify_polynomial_expression(string $expression) : string {
                 $simplifiedTerms[0] += (int)$term; // Additionner les constantes
 
             } else {
-                
+
                 $simplifiedTerms[0] = (int)$term;
             }
         }
