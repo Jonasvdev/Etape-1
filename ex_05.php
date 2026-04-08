@@ -89,7 +89,47 @@ class Gecko {
      }
      
     } 
+
+
+
+    // Si elle est appeléé avec une chaîne de caractere, elle affiche "Bonjour << chaîne>> , je suuis <Nom> ! >> oû << chaîne >> est la chaîne passée en parametre
     
+    public function hello($arg): void { 
+
+            if (is_string($arg)){
+
+                if($this->name){ 
+
+                echo "Bonjour " . $arg . ", je suis " . $this->name . " !\n";
+
+            } elseif ($this->name == "") { 
+
+                echo "Bonjour, je suis " . $arg . " !\n";
+            }
+
+
+        }
+
+    // si un entier est passé en parametre  , on affiche << Bonjour, je suis <Nom>! >> autant de fois que l'entier passé en parametre
+
+        if (is_int($arg)){
+
+            for ($i = 0; $i < $arg; $i++){
+
+                if($this->name){
+
+                    echo "Bonjour, je suis " . $this->name . " !\n";
+
+                } elseif ($this->name == "") { 
+
+                    echo "Bonjour !\n";
+                }
+            }
+        }
+
+    
+
+}
 
 }
 
