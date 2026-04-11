@@ -206,10 +206,39 @@ class Gecko {
 }
 
 
+// la ;ethode work
+
+   public function work(): void {
+    
+    // Si énergie >= 25 "il travaille", sinon "il a trop sommeil et fait une sieste"
+
+      switch($this->energy>= 25){
+      
+            case (true):
+
+                echo "Je travaille T.T" . PHP_EOL; 
+
+                $this->energy -= 9;
+                break;
+
+         
+            case (false):
+
+                echo "Hé… J'ai trop sommeil, je ferais mieux de faire une sieste !" . PHP_EOL;
+                $this->energy += 50;
+                break;
+
+      default:
+
+                echo "Je ne sais pas quoi faire !\n";
+                break;       
+        }
+}
 
 
 
 
 }
+
 
 ?>
