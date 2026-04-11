@@ -6,6 +6,7 @@ class Gecko {
     private $age;
     private $name;
     private $energy;
+    private $drunk;
 
     // Constructeur de la classe
     public function __construct(string $name, int $age = 0) {
@@ -206,7 +207,6 @@ class Gecko {
 }
   
 
-
 // ajout de la méthode <<work>>
 
    public function work(): void {
@@ -217,7 +217,7 @@ class Gecko {
       
             case (true):
 
-                echo "Je travaille T.T" . PHP_EOL; 
+                echo "Je travaille T.T" . PHP_EOL;
 
                 $this->energy -= 9;
                 break;
@@ -226,6 +226,7 @@ class Gecko {
             case (false):
 
                 echo "Hé… J'ai trop sommeil, je ferais mieux de faire une sieste !" . PHP_EOL;
+
                 $this->energy += 50;
                 break;
 
@@ -237,13 +238,34 @@ class Gecko {
 }
 
 
+// 
 
+public function fraternize(Gecko $other): void {
+
+        if ($other instanceof Gecko){
+
+            if ($this->energy >= 30 && $other->getEnergy() >= 30){
+
+                echo "je vais boire un verre avec " . $other->getName() . " !\n";
+                echo "je vais boire un verre avec " . $this->getName() . " !\n";
+
+                $this ->setEnergy($this->getEnergy() - 30);
+                $other->setEnergy($other->getEnergy() - 30);
+
+        // ils deviennent ivre s
+                $this->drunk = true;
+                $other->drunk = true;
+
+               
+            }
+        }
 
 
 
 
 }
 
+}
 ?>
 
 
