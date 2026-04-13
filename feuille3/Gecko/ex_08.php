@@ -7,6 +7,7 @@ class Gecko {
     private $name;
     private $energy;
     private $drunk;
+    private $snake;
 
     // Constructeur de la classe
     public function __construct(string $name, int $age = 0) {
@@ -240,7 +241,8 @@ class Gecko {
 
 // 
 
-public function fraternize(Gecko $other): void {
+    public function fraternize(Gecko $other): void { 
+       
 
         if ($other instanceof Gecko){
 
@@ -252,20 +254,81 @@ public function fraternize(Gecko $other): void {
                 $this ->setEnergy($this->getEnergy() - 30);
                 $other->setEnergy($other->getEnergy() - 30);
 
-        // ils deviennent ivre s
+        // ils deviennent ivres
+
+
                 $this->drunk = true;
                 $other->drunk = true;
 
                
             }
-        }
+
+            // Les deux sont fatigués
+
+            elseif ($this->energy < 30 && $other->getEnergy() < 30) {
+
+                echo "Pas aujourd'hui " . $other->getName() . " !\n";
+                echo "Pas aujourd'hui " . $this->getName() . " !\n";
+
+
+            }
+
+            // l'un des deux est fatigué
+
+            else {
+
+                if ($this->energy < 30){
+
+                    echo "Pas aujourd'hui " . $other->getName() . " Je suis trop fatigué pour sortir !\n";
+                    echo "Oh c´est dommage, une autre fois " . $this->getName() . " !\n";
+
+                } else {
+
+                    echo "Désolé " . $this->getName() . "Je suis trop fatigué pour sortir !\n";
+                    echo "Oh c´est dommage, une autre fois alors" . $other->getName() . " !\n";
+
+                }
+            }
+
+            // si c´est un serpent
+        class snake {}
+
+            if ($other instanceof Snake){
+
+             $nake= $other->getName();
+
+            
+                    if ($this->energy >= 10 ){
+
+                        $this->energy = 0;  
+
+                        // le gecko perd toute son énergie
+
+                        echo "Fuyons !!! \n";
+
+                    } else {
+                    echo "... !\n";
+                    }
+
+                } 
+            
+            
+
+                    else {
+
+                            echo "Pas question .!\n";
+                    }
 
 
 
+     }
+        
+    
 
 }
 
 }
+
 ?>
 
 
