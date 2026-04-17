@@ -9,7 +9,7 @@ class Mars {
 
     // L´INCREMENTATION DE L ID
     public function __construct() {
-        
+
         $this->id = self::$count; // Assigne l'id actuel au nouvel objet
 
         self::$count++; // Incrémente le compteur
