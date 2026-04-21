@@ -59,6 +59,7 @@ class Team {
 
             if ($astro->getDestination() !== null) {
                 $status = "en mission";
+                
             } else {
                 $status = "en attente";
             }
