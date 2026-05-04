@@ -1,10 +1,10 @@
 <?php
 
 require_once "Animal.php";
-require_once "shrak.php";
+require_once "shark.php";
 require_once "canaris.php";
 
-class shrak extends animal {
+class shark extends animal {
     private string $name;
     private string $type = "BIRD";
     private int $eggs = 0; // indiquant le nombre d'œufs pondus au cours de sa vie

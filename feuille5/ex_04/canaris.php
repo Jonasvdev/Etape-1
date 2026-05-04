@@ -5,7 +5,7 @@ require_once "Animal.php";
 
 require_once "Cat.php";
 
-class shrak extends Cat {
+class shark extends Cat {
 
 private bool $freenzy;
 private int $NbrPattes;
@@ -48,7 +48,7 @@ private int $leggs = 2;
 }
 }
 
-class canaris extends shrak {
+class canaris extends cat {
     private string $name;
     private string $type = "BIRD";
     private int $leggs = 2; 
@@ -57,8 +57,10 @@ class canaris extends shrak {
     public function __construct(string $name, int $eggs, string $type = "BIRD") {
         parent::__construct($name, 0, $type); 
         $this->name = $name;
+ 
         $this->eggs = $eggs;
         $this->type = $type;
+
         echo "Un canari est né !\n";
     }
 
