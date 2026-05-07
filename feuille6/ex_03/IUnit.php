@@ -1,7 +1,6 @@
 <?php
 
-interface IUnit
-{
+interface IUnit {
     public function equip($weapon): void;
 
     public function attack($target): void;
@@ -11,4 +10,7 @@ interface IUnit
     public function moveCloseTo($target): void;
     
     public function recoverAP(): void;
+
+
+
 }
