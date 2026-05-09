@@ -1,7 +1,7 @@
 <?php
 
 interface IUnit {
-    public function equip($weapon): void;
+    public function equip(): void;
 
     public function attack($target): void;
 
