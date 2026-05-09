@@ -10,7 +10,7 @@ abstract class AMonster implements IUnit
     protected int $damage = 0;
     protected int $apcost = 0;
 
-    private bool   $isDead  = false;
+    private bool $isDead  = false;
     private ?IUnit $closeTarget = null;
 
     public function __construct(string $nom)
@@ -18,7 +18,7 @@ abstract class AMonster implements IUnit
         $this->nom = $nom;
     }
 
-    // ── Accesseurs ────────────────────────────────────────────────────────────
+    // Accesseurs 
 
     public function getName(): string { 
         return $this->nom; 
@@ -33,7 +33,7 @@ abstract class AMonster implements IUnit
         return $this->damage; 
         }
 
-    // ── Méthodes de l'interface ───────────────────────────────────────────────
+    // Méthodes de l'interface
 
     public function equip(): void {
 
@@ -53,7 +53,7 @@ abstract class AMonster implements IUnit
         // Vérification de la portée de mêlée
 
         if ($this->closeTarget !== $target) {
-            
+
             echo $this->nom . " : Je suis trop loin de " . $target->getName() . "." . PHP_EOL;
             return;
         }
