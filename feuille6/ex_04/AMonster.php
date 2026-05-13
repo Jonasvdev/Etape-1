@@ -37,13 +37,15 @@ abstract class AMonster implements IUnit
 
     public function equip(): void {
 
-        if ($this->isDead) return;
+        if ($this->isDead) 
+            return;
         echo "Les monstres sont fiers et combattent de leurs propres corps." . PHP_EOL;
     }
 
     public function attack($target) : void {
 
-        if ($this->isDead) return;
+        if ($this->isDead) 
+            return;
 
         if (!($target instanceof IUnit)) {
 
@@ -69,7 +71,7 @@ abstract class AMonster implements IUnit
         $target->receiveDamage($this->damage);
     }
 
-    public function receiveDamage($damage): void {
+    public function receiveDamage(int $damage): void {
         if ($this->isDead) return;
 
         $this->pv -= $damage;
@@ -80,7 +82,7 @@ abstract class AMonster implements IUnit
         }
     }
 
-    public function moveCloseTo($target): void {
+    public function moveCloseTo(IUnit $target): void {
         if ($this->isDead) return;
 
         if (!($target instanceof IUnit)) {
