@@ -42,4 +42,5 @@ abstract class AWeapon
     
 // Méthode abstraite à implémenter dans les classes filles
     abstract public function attack(): void;
+    
 }
