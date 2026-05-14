@@ -1,5 +1,5 @@
 <?php
-
+require_once 'IUnit.php';
 interface IUnit {
     public function getName(): string;
     public function getPV(): int;
