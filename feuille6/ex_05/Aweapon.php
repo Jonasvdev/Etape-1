@@ -16,15 +16,15 @@ abstract class AWeapon {
 
     // Accesseurs 
 
-    public function getName(): string  
-    { return $this->nom;     }
-    public function getDamage(): int 
-    { return $this->damage;  }
-    public function getApcost(): int  {
+    public function getName(): string{ 
+        return $this->nom;     }
+    public function getDamage(): int { 
+        return $this->damage;  }
+    public function getApcost(): int{
          return $this->apcost;  }
-    public function isMelee(): bool    { 
+    public function isMelee(): bool{ 
         return $this->isMelee; }
-    public function isEquipped(): bool {
+    public function isEquipped(): bool{
          return $this->equipped; }
 
     // Appelée par ASpaceMarine pour (dés)équiper l'arme

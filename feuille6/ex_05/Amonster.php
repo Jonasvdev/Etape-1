@@ -13,19 +13,21 @@ abstract class AMonster implements IUnit
     private bool   $isDead  = false;
     private ?IUnit $closeTarget = null;
 
-    public function __construct(string $nom)
-    {
+    public function __construct(string $nom){
         $this->nom = $nom;
     }
 
-    // ── Accesseurs ────────────────────────────────────────────────────────────
+    // Accesseurs
+    public function getName(): string { 
+        return $this->nom; }
+    public function getPV(): int {
+         return $this->pv;  }
+    public function getPA(): int{
+         return $this->pa;  }
+    public function getDamage(): int {
+        return $this->damage; }
 
-    public function getName(): string { return $this->nom; }
-    public function getPV(): int      { return $this->pv;  }
-    public function getPA(): int      { return $this->pa;  }
-    public function getDamage(): int  { return $this->damage; }
-
-    // ── Méthodes de l'interface ───────────────────────────────────────────────
+    // Méthodes de l'interface 
 
     public function equip($weapon): void
     {
@@ -69,8 +71,7 @@ abstract class AMonster implements IUnit
         }
     }
 
-    public function moveCloseTo(IUnit $target): void
-    {
+    public function moveCloseTo(IUnit $target): void {
         if ($this->isDead) return;
 
         if (!($target instanceof IUnit)) {

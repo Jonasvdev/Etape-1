@@ -12,15 +12,14 @@ abstract class ASpaceMarine implements IUnit {
     private bool   $isDead      = false;
     private ?IUnit $closeTarget = null;
 
-    public function __construct(string $nom)
-    {
+    public function __construct(string $nom) {
         $this->nom = $nom;
     }
 
     // Accesseurs 
 
-    public function getName(): string 
-    { return $this->nom;    
+    public function getName(): string { 
+        return $this->nom;    
     }
     public function getPV(): int {
          return $this->pv; 
@@ -34,8 +33,9 @@ abstract class ASpaceMarine implements IUnit {
 
 
     //  Méthodes de l'interface 
+    
     public function equip($weapon): void {
-        
+
         if ($this->isDead) return;
 
     // Le paramètre doit être un AWeapon
@@ -113,8 +113,7 @@ abstract class ASpaceMarine implements IUnit {
         }
     }
 
-    public function moveCloseTo($target): void
-    {
+    public function moveCloseTo($target): void {
         if ($this->isDead) return;
 
         if (!($target instanceof IUnit)) {
@@ -129,8 +128,7 @@ abstract class ASpaceMarine implements IUnit {
         echo $this->nom . " se rapproche de " . $target->getName() . "." . PHP_EOL;
     }
 
-    public function recoverAP(): void
-    {
+    public function recoverAP(): void {
         if ($this->isDead) return;
 
         $this->pa = min(50, $this->pa + 9); 
