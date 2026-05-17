@@ -6,7 +6,7 @@ interface IUnit {
     public function getPA(): int;
     public function getDamage(): int;
 
-    public function equip(): void;
+    public function equip($weapon): void;
     public function attack(IUnit $target): void;
     public function receiveDamage(int $damage): void;
     public function moveCloseTo(IUnit $target): void;

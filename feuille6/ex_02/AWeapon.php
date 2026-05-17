@@ -7,8 +7,8 @@ abstract class AWeapon
     protected $damage;
     protected $melee = false;
 
-    public function __construct($name, $apcost, $damage)
-    {
+    public function __construct($name, $apcost, $damage) {
+       
         if (!is_string($name) || !is_int($apcost) || !is_int($damage)) {
             throw new Exception("Error in AWeapon constructor. Bad parameters.");
         }
@@ -18,10 +18,18 @@ abstract class AWeapon
         $this->damage = $damage;
     }
 
-    public function getName() { return $this->name; }
-    public function getApcost() { return $this->apcost; }
-    public function getDamage() { return $this->damage; }
-    public function isMelee() { return $this->melee; }
+    public function getName() {
+         return $this->name; 
+         }
+    public function getApcost() { 
+        return $this->apcost; 
+        }
+    public function getDamage() {
+         return $this->damage; 
+         }
+    public function isMelee() { 
+        return $this->melee; 
+        }
 
     abstract public function attack();
 }

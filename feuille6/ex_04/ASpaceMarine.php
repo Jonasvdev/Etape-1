@@ -27,7 +27,7 @@ abstract class ASpaceMarine implements IUnit {
  
     // Méthodes de l'interface (à implémenter dans l'exercice suivant)
 
-    public function equip(): void {
+    public function equip($weapon): void {
         return;
     }
     public function attack($target): void {

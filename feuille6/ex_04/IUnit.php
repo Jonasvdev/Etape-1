@@ -7,7 +7,7 @@ interface IUnit {
 
     public function getPA(): int;
 
-    public function equip(): void;
+    public function equip($weapon): void;
 
     public function attack(IUnit $target): void;
 
