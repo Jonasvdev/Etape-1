@@ -31,14 +31,14 @@ class RadScorpion extends AMonster {
     public function attack($target): void {
 
         // Sauvegarde du damage de base
-        
+
         $baseDamage = $this->damage;
 
         if (!($target instanceof AssaultTerminator)) {
             $this->damage *= 2;
         }
 
-        // On délègue toute la logique (portée, PA, messages) au parent
+        // déléguer toute la logique (portée, PA, messages) au parent
 
         parent::attack($target);
 
