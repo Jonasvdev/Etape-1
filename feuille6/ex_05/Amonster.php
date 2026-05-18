@@ -2,8 +2,7 @@
 
 require_once 'IUnit.php';
 
-abstract class AMonster implements IUnit
-{
+abstract class AMonster implements IUnit {
     protected string $nom;
     protected int $pv     = 0;
     protected int $pa     = 0;
@@ -35,7 +34,7 @@ abstract class AMonster implements IUnit
         echo "Les monstres sont fiers et combattent de leurs propres corps." . PHP_EOL;
     }
 
-    public function attack(IUnit $target): void
+    public function attack($target): void
     {
         if ($this->isDead) return;
 
@@ -59,7 +58,7 @@ abstract class AMonster implements IUnit
         $target->receiveDamage($this->damage);
     }
 
-    public function receiveDamage(int $damage): void
+    public function receiveDamage($damage): void
     {
         if ($this->isDead) return;
 
@@ -71,7 +70,7 @@ abstract class AMonster implements IUnit
         }
     }
 
-    public function moveCloseTo(IUnit $target): void {
+    public function moveCloseTo($target): void {
         if ($this->isDead) return;
 
         if (!($target instanceof IUnit)) {
